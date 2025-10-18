@@ -3,7 +3,7 @@
 <title>Static Call Graph - [CAN_test\CAN_test.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image CAN_test\CAN_test.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6180002: Last Updated: Fri Oct  3 16:00:17 2025
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6180002: Last Updated: Sat Oct 18 12:14:32 2025
 <BR><P>
 <H3>Maximum Stack Usage =        208 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -931,15 +931,15 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[a3]"></a>HAL_TIM_IRQHandler</STRONG> (Thumb, 538 bytes, Stack size 24 bytes, stm32f4xx_hal_tim.o(.text.HAL_TIM_IRQHandler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = HAL_TIM_IRQHandler &rArr; HAL_TIMEx_CommutCallback
+<BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = HAL_TIM_IRQHandler &rArr; HAL_TIM_IC_CaptureCallback
 </UL>
-<BR>[Calls]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_CommutCallback
+<BR>[Calls]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IC_CaptureCallback
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_PulseFinishedCallback
+<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PeriodElapsedCallback
+<LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_CommutCallback
 <LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_TriggerCallback
 <LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_BreakCallback
 <LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OC_DelayElapsedCallback
-<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IC_CaptureCallback
-<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_PulseFinishedCallback
-<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PeriodElapsedCallback
 </UL>
 <BR>[Called By]<UL><LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM6_DAC_IRQHandler
 </UL>
@@ -1032,7 +1032,7 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f427xx.o(.text)
 </UL>
 <P><STRONG><a name="[40]"></a>TIM6_DAC_IRQHandler</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, stm32f4xx_it.o(.text.TIM6_DAC_IRQHandler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = TIM6_DAC_IRQHandler &rArr; HAL_TIM_IRQHandler &rArr; HAL_TIMEx_CommutCallback
+<BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = TIM6_DAC_IRQHandler &rArr; HAL_TIM_IRQHandler &rArr; HAL_TIM_IC_CaptureCallback
 </UL>
 <BR>[Calls]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IRQHandler
 </UL>

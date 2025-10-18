@@ -8,6 +8,7 @@
 "can_test\stm32f4xx_hal_msp.o"
 "can_test\callback.o"
 "can_test\m3508_motor.o"
+"can_test\pid.o"
 "can_test\stm32f4xx_hal_can.o"
 "can_test\stm32f4xx_hal_rcc.o"
 "can_test\stm32f4xx_hal_rcc_ex.o"
