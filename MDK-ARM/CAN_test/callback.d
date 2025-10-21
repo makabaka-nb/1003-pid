@@ -1,4 +1,5 @@
 can_test/callback.o: ..\Core\Src\callback.cpp ..\Core\Inc\M3508_Motor.h \
+  ..\Core\Inc\pid.h \
   D:\keil5\core\ARM\ARMCLANG\Bin\..\include\libcxx\stdint.h \
   D:\keil5\core\ARM\ARMCLANG\Bin\..\include\libcxx\__config \
   D:\keil5\core\ARM\ARMCLANG\Bin\..\include\stdint.h ..\Core\Inc\can.h \
@@ -33,4 +34,14 @@ can_test/callback.o: ..\Core\Src\callback.cpp ..\Core\Inc\M3508_Motor.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr_ex.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h \
-  ..\Core\Inc\tim.h
+  ..\Core\Inc\tim.h \
+  D:\keil5\core\ARM\ARMCLANG\Bin\..\include\libcxx\cmath \
+  D:\keil5\core\ARM\ARMCLANG\Bin\..\include\libcxx\math.h \
+  D:\keil5\core\ARM\ARMCLANG\Bin\..\include\math.h \
+  D:\keil5\core\ARM\ARMCLANG\Bin\..\include\libcxx\limits \
+  D:\keil5\core\ARM\ARMCLANG\Bin\..\include\libcxx\type_traits \
+  D:\keil5\core\ARM\ARMCLANG\Bin\..\include\libcxx\cstddef \
+  D:\keil5\core\ARM\ARMCLANG\Bin\..\include\libcxx\version \
+  D:\keil5\core\ARM\ARMCLANG\Bin\..\include\libcxx\__undef_macros \
+  D:\keil5\core\ARM\ARMCLANG\Bin\..\include\libcxx\stdlib.h \
+  D:\keil5\core\ARM\ARMCLANG\Bin\..\include\stdlib.h

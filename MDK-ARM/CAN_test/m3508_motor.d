@@ -1,5 +1,5 @@
 can_test/m3508_motor.o: ..\Core\Src\M3508_Motor.cpp \
-  ..\Core\Inc\M3508_Motor.h \
+  ..\Core\Inc\M3508_Motor.h ..\Core\Inc\pid.h \
   D:\keil5\core\ARM\ARMCLANG\Bin\..\include\libcxx\stdint.h \
   D:\keil5\core\ARM\ARMCLANG\Bin\..\include\libcxx\__config \
   D:\keil5\core\ARM\ARMCLANG\Bin\..\include\stdint.h \

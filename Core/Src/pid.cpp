@@ -2,7 +2,7 @@
 // Created by ROG STRIX on 2025/10/18.
 //
 
-#include "pid.h"
+#include "../Inc/pid.h"
 void PID::reset() {
     ref_ = fdb_ = err_ = err_sum_ = last_err_ = pout_ = iout_ = last_dout_ = 0.0f;
 }

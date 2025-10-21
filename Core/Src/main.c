@@ -21,6 +21,7 @@
 #include "can.h"
 #include "tim.h"
 #include "gpio.h"
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -45,29 +46,25 @@
 
 /* USER CODE BEGIN PV */
 CAN_RxHeaderTypeDef rx_header;
-CAN_TxHeaderTypeDef tx_header={
-    .StdId =0x200,
-    .ExtId=0,
-    .IDE=CAN_ID_STD,
-    .RTR=CAN_RTR_DATA,
-    .DLC=8,
-    .TransmitGlobalTime = DISABLE
-};
-CAN_FilterTypeDef filter_config={
-    .FilterIdHigh=0x0000,
-    .FilterIdLow = 0x0000,
-    .FilterMaskIdHigh = 0X0000,
-    .FilterMaskIdLow = 0X0000,
-    .FilterFIFOAssignment = CAN_FILTER_FIFO0,
-    .FilterBank=0,
-    .FilterMode=CAN_FILTERMODE_IDMASK,
-    .FilterScale=CAN_FILTERSCALE_32BIT,
-    .FilterActivation=ENABLE
-};
+CAN_TxHeaderTypeDef tx_header = { .StdId = 0x200,
+                                  .ExtId = 0,
+                                  .IDE = CAN_ID_STD,
+                                  .RTR = CAN_RTR_DATA,
+                                  .DLC = 8,
+                                  .TransmitGlobalTime = DISABLE };
+CAN_FilterTypeDef filter_config = { .FilterIdHigh = 0x0000,
+                                    .FilterIdLow = 0x0000,
+                                    .FilterMaskIdHigh = 0X0000,
+                                    .FilterMaskIdLow = 0X0000,
+                                    .FilterFIFOAssignment = CAN_FILTER_FIFO0,
+                                    .FilterBank = 0,
+                                    .FilterMode = CAN_FILTERMODE_IDMASK,
+                                    .FilterScale = CAN_FILTERSCALE_32BIT,
+                                    .FilterActivation = ENABLE };
 uint8_t rx_data[8];
-uint8_t tx_data[8]={0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00};
+uint8_t tx_data[8] = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
 uint32_t can_tx_mail_box;
-
+uint8_t stop_flag = 1;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -113,22 +110,21 @@ int main(void)
   MX_CAN1_Init();
   MX_TIM6_Init();
   /* USER CODE BEGIN 2 */
-  HAL_CAN_ConfigFilter(&hcan1,&filter_config);
+    HAL_CAN_ConfigFilter(&hcan1, &filter_config);
 
-  HAL_CAN_Start(&hcan1);
-  HAL_CAN_ActivateNotification(&hcan1,CAN_IT_RX_FIFO0_MSG_PENDING);
+    HAL_CAN_Start(&hcan1);
+    HAL_CAN_ActivateNotification(&hcan1, CAN_IT_RX_FIFO0_MSG_PENDING);
 
-  HAL_TIM_Base_Start_IT(&htim6);
+    HAL_TIM_Base_Start_IT(&htim6);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  while (1)
-  {
+    while (1) {
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-  }
+    }
   /* USER CODE END 3 */
 }
 
@@ -195,11 +191,10 @@ void SystemClock_Config(void)
 void Error_Handler(void)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
-  /* User can add his own implementation to report the HAL error return state */
-  __disable_irq();
-  while (1)
-  {
-  }
+    /* User can add his own implementation to report the HAL error return state */
+    __disable_irq();
+    while (1) {
+    }
   /* USER CODE END Error_Handler_Debug */
 }
 #ifdef USE_FULL_ASSERT
@@ -213,7 +208,7 @@ void Error_Handler(void)
 void assert_failed(uint8_t *file, uint32_t line)
 {
   /* USER CODE BEGIN 6 */
-  /* User can add his own implementation to report the file name and line number,
+    /* User can add his own implementation to report the file name and line number,
      ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
   /* USER CODE END 6 */
 }

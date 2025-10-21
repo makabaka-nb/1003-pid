@@ -40,8 +40,7 @@ M3508_Motor::M3508_Motor(
     feedforward_speed_(0.0f),
     feedforward_intensity_(0.0f),
     output_intensity_(0.0f),
-    control_method_(TORQUE) // 默认转矩控制
-{}
+    control_method_(TORQUE) {}
 float linearMapping(int in, int in_min, int in_max, float out_min, float out_max) {
     float y;
     y = out_min + (out_max - out_min) / static_cast<float>(in_max - in_min) * static_cast<float>(in - in_min);
@@ -62,7 +61,7 @@ void M3508_Motor::canRxMsgCallback(const uint8_t rx_data[8]) {
     current_ = linearMapping(current, -16384, 16384, -20.0f, 20.0f);
     temp_ = static_cast<float>(rx_data[6]);
     last_ecd_angle_ = ecd_angle_;
-    fdb_angle_ = delta_angle_;
+    fdb_angle_ = angle_;
     fdb_speed_ = rotate_speed_;
 }
 
@@ -98,4 +97,16 @@ void M3508_Motor::handle(void) {
             break;
         }
     }
+}
+
+float M3508_Motor::FeedforwardIntensityCalc(float current_angle) {
+    const float m = 0.5f;
+    const float l = 0.05524f;
+    const float g = 9.80f;
+    const float kt = 0.3f;
+    float angle_rad = current_angle * 3.1415926535f / 180.0;
+    float torque = m * g * l * sinf(angle_rad);
+    float current = -torque / kt;
+    float intensity = current * 819.2f;
+    return intensity;
 }

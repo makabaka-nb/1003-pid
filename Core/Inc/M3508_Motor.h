@@ -52,6 +52,7 @@ public:
     void SetSpeed(float target_speed, float feedforward_intensity);
     void SetIntensity(float intensity);
     void handle(void);
+    float FeedforwardIntensityCalc(float current_angle);
 };
 
 #endif //CAN_TEST_M3508_MOTOR_H
