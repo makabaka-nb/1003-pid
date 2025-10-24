@@ -33,11 +33,11 @@ enable_language(C ASM)
 
 # Create an executable object type
 add_executable(${CMAKE_PROJECT_NAME}
-        Core/Src/callback.cpp
-        Core/Src/M3508_Motor.cpp
-        Core/Inc/M3508_Motor.h
-        Core/Src/pid.cpp
-        Core/Inc/pid.h
+        User/callback.cpp
+        User/M3508_Motor.cpp
+        User/M3508_Motor.h
+        User/pid.cpp
+        User/pid.h
 )
 
 # Add STM32CubeMX generated sources

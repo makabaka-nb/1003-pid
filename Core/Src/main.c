@@ -45,7 +45,6 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-CAN_RxHeaderTypeDef rx_header;
 CAN_TxHeaderTypeDef tx_header = { .StdId = 0x200,
                                   .ExtId = 0,
                                   .IDE = CAN_ID_STD,
@@ -61,10 +60,8 @@ CAN_FilterTypeDef filter_config = { .FilterIdHigh = 0x0000,
                                     .FilterMode = CAN_FILTERMODE_IDMASK,
                                     .FilterScale = CAN_FILTERSCALE_32BIT,
                                     .FilterActivation = ENABLE };
-uint8_t rx_data[8];
-uint8_t tx_data[8] = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
-uint32_t can_tx_mail_box;
-uint8_t stop_flag = 1;
+
+uint8_t stop_flag = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
